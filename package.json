@@ -2,7 +2,12 @@
   "name": "@mf-rspack/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx build shell",
+    "build:all": "nx run-many --target=build --all",
+    "serve": "nx serve shell",
+    "serve:lead_form": "nx serve lead_form"
+  },
   "private": true,
   "devDependencies": {
     "@analogjs/vite-plugin-angular": "~1.14.1",
@@ -23,6 +28,7 @@
     "@nx/web": "20.8.2",
     "@nx/webpack": "20.8.2",
     "@nx/workspace": "20.8.2",
+    "@rspack/core": "^1.4.1",
     "@schematics/angular": "~19.2.0",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
@@ -45,6 +51,7 @@
     "vitest": "^3.0.0"
   },
   "dependencies": {
+    "@angular/animations": "^19.2.15",
     "@angular/common": "~19.2.0",
     "@angular/compiler": "~19.2.0",
     "@angular/core": "~19.2.0",
@@ -52,8 +59,8 @@
     "@angular/platform-browser": "~19.2.0",
     "@angular/platform-browser-dynamic": "~19.2.0",
     "@angular/router": "~19.2.0",
+    "@nx/angular": "^20.8.2",
     "rxjs": "~7.8.0",
-    "zone.js": "~0.15.0",
-    "@nx/angular": "^20.8.2"
+    "zone.js": "~0.15.0"
   }
 }
