@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "hub/Routes": ["apps/hub/src/app/remote-entry/entry.routes.ts"]
+      "hub/Routes": ["apps/hub/src/app/remote-entry/entry.routes.ts"],
+      "guides/Routes": ["apps/guides/src/app/remote-entry/entry.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
