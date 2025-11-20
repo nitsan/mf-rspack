@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { NxWelcomeComponent } from './nx-welcome.component';
 
 @Component({
-  imports: [CommonModule, NxWelcomeComponent],
+  imports: [NxWelcomeComponent],
   selector: 'app-hub-entry',
   template: `<app-nx-welcome></app-nx-welcome>`,
 })
