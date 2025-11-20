@@ -1,9 +1,9 @@
 import { ModuleFederationConfig } from '@nx/module-federation';
 
 const config: ModuleFederationConfig = {
-  name: 'lead_form',
+  name: 'guides',
   exposes: {
-    './Routes': 'apps/lead_form/src/app/remote-entry/entry.routes.ts',
+    './Routes': 'apps/guides/src/app/remote-entry/entry.routes.ts',
   },
 };
 
