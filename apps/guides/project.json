@@ -1,31 +1,31 @@
 {
-  "name": "lead_form",
+  "name": "guides",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/lead_form/src",
+  "sourceRoot": "apps/guides/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/lead_form",
-        "index": "apps/lead_form/src/index.html",
-        "main": "apps/lead_form/src/main.ts",
+        "outputPath": "dist/apps/guides",
+        "index": "apps/guides/src/index.html",
+        "main": "apps/guides/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/lead_form/tsconfig.app.json",
+        "tsConfig": "apps/guides/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/lead_form/public"
+            "input": "apps/guides/public"
           }
         ],
-        "styles": ["apps/lead_form/src/styles.scss"],
+        "styles": ["apps/guides/src/styles.scss"],
         "scripts": [],
         "customWebpackConfig": {
-          "path": "apps/lead_form/webpack.config.ts"
+          "path": "apps/guides/webpack.config.ts"
         }
       },
       "configurations": {
@@ -44,7 +44,7 @@
           ],
           "outputHashing": "all",
           "customWebpackConfig": {
-            "path": "apps/lead_form/webpack.prod.config.ts"
+            "path": "apps/guides/webpack.prod.config.ts"
           }
         },
         "development": {
@@ -66,10 +66,10 @@
       },
       "configurations": {
         "production": {
-          "buildTarget": "lead_form:build:production"
+          "buildTarget": "guides:build:production"
         },
         "development": {
-          "buildTarget": "lead_form:build:development"
+          "buildTarget": "guides:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -77,33 +77,26 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "lead_form:build"
+        "buildTarget": "guides:build"
       }
     },
     "lint": {
       "executor": "@nx/eslint:lint"
     },
-    "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
-      "options": {
-        "reportsDirectory": "../../coverage/apps/lead_form"
-      }
-    },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "defaultConfiguration": "production",
       "options": {
-        "buildTarget": "lead_form:build",
+        "buildTarget": "guides:build",
         "port": 4201,
         "watch": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "lead_form:build:development"
+          "buildTarget": "guides:build:development"
         },
         "production": {
-          "buildTarget": "lead_form:build:production"
+          "buildTarget": "guides:build:production"
         }
       }
     }
