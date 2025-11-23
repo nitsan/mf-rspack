@@ -6,7 +6,8 @@
     "build": "nx build shell",
     "build:all": "nx run-many --target=build --all",
     "serve": "nx serve shell",
-    "serve:lead_form": "nx serve lead_form"
+    "serve:lead_form": "nx serve lead_form",
+    "lint": "nx run-many --target=lint --all"
   },
   "private": true,
   "devDependencies": {
