@@ -27,10 +27,6 @@
         "{workspaceRoot}/eslint.config.mjs"
       ]
     },
-    "@nx/vite:test": {
-      "cache": true,
-      "inputs": ["default", "^production"]
-    },
     "@nx/angular:webpack-browser": {
       "cache": true,
       "dependsOn": ["^build"],
@@ -48,7 +44,7 @@
       "e2eTestRunner": "none",
       "linter": "eslint",
       "style": "scss",
-      "unitTestRunner": "vitest"
+      "unitTestRunner": "none"
     }
   }
 }
