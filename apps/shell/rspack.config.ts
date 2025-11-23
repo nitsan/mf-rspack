@@ -48,6 +48,9 @@ export default async (env: any, argv: any) => {
             },
           ],
           outputHashing: 'all',
+          vendorChunk: true,
+          sourceMap: true,
+          namedChunks: true,
           devServer: {},
         },
       },
@@ -70,7 +73,7 @@ export default async (env: any, argv: any) => {
   // Check multiple ways to determine production mode
   const mode = env?.mode || argv?.mode || process.env['NODE_ENV'] || 'development';
   const isProduction = mode === 'production';
-  
+
   // In development, use baseWebpackConfig which has the standard remotes
   // In production, use withModuleFederation helper (similar to webpack.prod.config.ts)
   if (isProduction) {
