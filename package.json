@@ -7,10 +7,9 @@
     "build:all": "nx run-many --target=build --all",
     "docker:build": "npm run build:all && docker build . -t mf-rspack-source --platform linux/arm64/v8",
     "docker:run": "docker run --rm -p 80:80 --name mf-rspack-source mf-rspack-source",
-    "serve": "nx serve shell",
-    "serve:lead_form": "nx serve lead_form",
+    "lint": "nx run-many --target=lint --all",
     "reset": "nx reset",
-    "lint": "nx run-many --target=lint --all"
+    "serve": "nx serve shell"
   },
   "private": true,
   "devDependencies": {
