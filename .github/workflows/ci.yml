@@ -19,9 +19,6 @@ jobs:
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit --no-fund
 
-      - name: Lint all projects
-        run: npm run lint
-
-      - name: Build all projects
-        run: npm run build:all
+      - name: Lint and build all projects
+        run: nx run-many --targets=lint,build --all
 
