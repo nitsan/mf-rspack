@@ -6,75 +6,6 @@
   "sourceRoot": "apps/guides/src",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nx/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/apps/guides",
-        "index": "apps/guides/src/index.html",
-        "main": "apps/guides/src/main.ts",
-        "polyfills": ["zone.js"],
-        "tsConfig": "apps/guides/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
-        "assets": [
-          {
-            "glob": "**/*",
-            "input": "apps/guides/public"
-          }
-        ],
-        "styles": ["apps/guides/src/styles.scss"],
-        "scripts": [],
-        "customWebpackConfig": {
-          "path": "apps/guides/webpack.config.ts"
-        }
-      },
-      "configurations": {
-        "production": {
-          "budgets": [
-            {
-              "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
-            },
-            {
-              "type": "anyComponentStyle",
-              "maximumWarning": "4kb",
-              "maximumError": "8kb"
-            }
-          ],
-          "outputHashing": "all",
-          "customWebpackConfig": {
-            "path": "apps/guides/webpack.prod.config.ts"
-          }
-        },
-        "development": {
-          "buildOptimizer": false,
-          "optimization": false,
-          "vendorChunk": true,
-          "extractLicenses": false,
-          "sourceMap": true,
-          "namedChunks": true
-        }
-      },
-      "defaultConfiguration": "production"
-    },
-    "serve": {
-      "executor": "@nx/angular:dev-server",
-      "options": {
-        "port": 4201,
-        "publicHost": "http://localhost:4201"
-      },
-      "configurations": {
-        "production": {
-          "buildTarget": "guides:build:production"
-        },
-        "development": {
-          "buildTarget": "guides:build:development"
-        }
-      },
-      "defaultConfiguration": "development",
-      "continuous": true
-    },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
@@ -99,6 +30,11 @@
         "production": {
           "buildTarget": "guides:build:production"
         }
+      }
+    },
+    "serve": {
+      "options": {
+        "port": 4201
       }
     }
   }
