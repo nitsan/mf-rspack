@@ -62,5 +62,22 @@ export default async () => {
       },
     }
   );
-  return webpackMerge(baseConfig[0], baseWebpackConfig);
+  const mergedConfig = webpackMerge(baseConfig[0], baseWebpackConfig);
+  
+  // Add module rule for .mjs files in @next-insurance
+  if (!mergedConfig.module) {
+    mergedConfig.module = {};
+  }
+  if (!mergedConfig.module.rules) {
+    mergedConfig.module.rules = [];
+  }
+  mergedConfig.module.rules.push({
+    test: /\.mjs$/,
+    include: /node_modules\/@next-insurance/,
+    resolve: {
+      fullySpecified: false,
+    },
+  });
+  
+  return mergedConfig;
 };
