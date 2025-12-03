@@ -30,13 +30,7 @@
     "@nx/angular:webpack-browser": {
       "cache": true,
       "dependsOn": ["^build"],
-      "inputs": [
-        "production",
-        "^production",
-        {
-          "env": "NX_MF_DEV_REMOTES"
-        }
-      ]
+      "inputs": ["production", "^production", { "env": "NX_MF_DEV_REMOTES" }]
     }
   },
   "generators": {
@@ -46,5 +40,6 @@
       "style": "scss",
       "unitTestRunner": "none"
     }
-  }
+  },
+  "nxCloudId": "6930a941758ee764da3ef554"
 }
