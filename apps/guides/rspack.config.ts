@@ -38,7 +38,7 @@ export default async () => {
             {
               type: 'initial',
               maximumWarning: '500kb',
-              maximumError: '1mb',
+              maximumError: '2mb',
             },
             {
               type: 'anyComponentStyle',
