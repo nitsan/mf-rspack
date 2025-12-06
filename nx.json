@@ -47,5 +47,18 @@
       "unitTestRunner": "none"
     }
   },
-  "nxCloudId": "6930a8889b50c9773b6970b0"
+  "nxCloudId": "6930a8889b50c9773b6970b0",
+  "plugins": [
+    {
+      "plugin": "@nx/rspack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "serveStaticTargetName": "serve-static",
+        "previewTargetName": "preview",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    }
+  ]
 }
